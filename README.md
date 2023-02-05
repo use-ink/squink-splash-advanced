@@ -39,10 +39,10 @@ cargo contract call\
     --gas 300000000000\
     --proof-size 512000\
     --contract "$GAME"\
-    --manifest-path=../game/Cargo.toml\
     --message register_player\
     --args "$CONTRACT" \"playername\"\
-    --skip-confirm
+    --skip-confirm\
+    game-metadata.json
 ```
 
 ### Starting the game
@@ -55,9 +55,9 @@ cargo contract call\
     --url wss://rococo-contracts-rpc.polkadot.io\
     --suri "$SURI"\
     --contract $GAME\
-    --manifest-path=../game/Cargo.toml\
     --message "start_game"\
-    --skip-confirm
+    --skip-confirm\
+    game-metadata.json
 ```
 
 ### Submitting a turn
@@ -70,12 +70,12 @@ cargo contract call\
     --url wss://rococo-contracts-rpc.polkadot.io\
     --suri "$SURI"\
     --contract $GAME\
-    --manifest-path=../game/Cargo.toml\
     --message "submit_turn"\
     --skip-dry-run\
     --gas 300000000000\
     --proof-size 912000\
-    --skip-confirm
+    --skip-confirm\
+    game-metadata.json
 ```
 
 ### Reading information 
@@ -86,8 +86,9 @@ export GAME=5E123… # your game contract address
 
 cargo contract call\
     --url wss://rococo-contracts-rpc.polkadot.io\
-    --contract $GAME
-    --message "gas_limit"
-    --dry-run game-metadata.json 
+    --contract $GAME\
+    --message "gas_limit"\
+    --dry-run game-metadata.json\
+    game-metadata.json
 ```
 
