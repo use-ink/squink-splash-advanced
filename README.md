@@ -5,6 +5,16 @@
 * [ink! Documenation Portal](https://use.ink/)
 * [ink! Examples](https://github.com/paritytech/ink/tree/master/examples)
 
+### How to test locally
+
+1. `cargo contract build --release` your `player` and `game` contract
+2. Upload `player` and `game`
+3. Call `game.register_player`
+4. Call `game.start_game`
+5. Open [https://splash.use.ink](https://splash.use.ink)
+6. Call `game.submit_turn`
+
+
 ### Cross-contract Calls
 
 ```
